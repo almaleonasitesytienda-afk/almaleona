@@ -12,12 +12,10 @@
     .btn-play {
       position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
       background: rgba(255,255,255,0.85); border: none; border-radius: 50%;
-      width: 80px; height: 80px; cursor: pointer; font-size: 28px;
+      width: 80px; height: 80px; cursor: pointer; font-size: 32px;
       display: flex; align-items: center; justify-content: center;
-      transition: opacity 0.3s;
     }
-    .btn-play:hover { background: white; }
-    .btn-play.oculto { opacity: 0; pointer-events: none; }
+    .oculto { display: none; }
   </style>
 </head>
 <body>
@@ -25,12 +23,12 @@
     <video id="video" loop playsinline>
       <source src="video%20sol%20bienvenida.mp4" type="video/mp4">
     </video>
-    <button class="btn-play" id="btn" onclick="reproducir()">▶</button>
+    <button class="btn-play" id="btn" onclick="reproducir()">&#9654;</button>
   </div>
   <script>
     function reproducir() {
-      const video = document.getElementById('video');
-      const btn = document.getElementById('btn');
+      var video = document.getElementById('video');
+      var btn = document.getElementById('btn');
       video.play();
       btn.classList.add('oculto');
     }
